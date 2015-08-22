@@ -8,14 +8,15 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Blog.QueryingMongoDb.Models
 {
-    public class ContactUsModel
+    public class ContactModel
     {
         [BsonId]
-        public String Id { get; set; } //MongoDb uses this field as identity.
+        public ObjectId Id { get; set; } //MongoDb uses this field as identity.
 
        // public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Name")]
         public string NameSurname { get; set; }
 
         [Required]
@@ -24,6 +25,6 @@ namespace Blog.QueryingMongoDb.Models
         [DataType(DataType.Url)]
         public string Website { get; set; }
         [DataType(DataType.MultilineText)]
-        public string Content { get; set; }
+        public string Description { get; set; }
     }
 }

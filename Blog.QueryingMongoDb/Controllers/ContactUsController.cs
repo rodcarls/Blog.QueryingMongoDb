@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Blog.QueryingMongoDb.Models;
 using Blog.QueryingMongoDb.Models.Repository;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 namespace Blog.QueryingMongoDb.Controllers
 {
     public class ContactUsController : Controller
     {
 
-        public MongoDbRepo Repo= new MongoDbRepo("mongodb://127.0.0.1:27017", "QueryMongoDb", "ContactUs");
+        private ContactCollection _contacts = new ContactCollection();
         //
         // GET: /ContactUs/
 
@@ -26,39 +17,32 @@ namespace Blog.QueryingMongoDb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(ContactUsModel contact)
+        public ActionResult Create(ContactModel contact)
         {
-            Repo.ContactUsCollection.InsertOneAsync(contact);
-            return View();
+            this._contacts.InsertContact(contact);
+            return View("List", _contacts.SelectAll());
         }
 
         public ActionResult List()
         {
-            var query = Repo.ContactUsCollection.Find(new BsonDocument()).ToListAsync();
-
-            return View(query.Result);
+            
+            return View(
+                _contacts.SelectAll());
         }
 
-
-
-   
-        public ActionResult Edit(string  contactId)
+        public ActionResult Edit(string contactId)
         {
-            var query = Repo.ContactUsCollection.Find(new BsonDocument { { "Id", contactId } }).FirstAsync();
-            return View(query.Result);
+            return View(_contacts.Get(contactId));
         }
 
-        //[HttpPost]
-        //public ActionResult Edit(ContactUsModel contact)
-        //{
-        //    //var id = new ObjectId(contact.ToString());
-        //    //var filter = Builders<ContactUsModel>.Filter.Eq(s => s._id, id);
-        //    //var result =  Repo.ContactUsCollection.ReplaceOneAsync(filter, contact);
-
-        //    //var query = Repo.ContactUsCollection.Find(new BsonDocument()).ToListAsync();
-
-        //    //return View("List", query.Result);
-        //}
+        [HttpPost]
+        public ActionResult Edit(string Id, ContactModel contact)
+        {
+           this._contacts.UpdateContact(Id,contact);
+            
+            return View("List",
+                _contacts.SelectAll());
+        }
 
         
     }
