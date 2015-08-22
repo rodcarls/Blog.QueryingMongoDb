@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Blog.QueryingMongoDb.Models.ContactUsModel>
+﻿@model IEnumerable<Blog.QueryingMongoDb.Models.ContactModel>
 
 @{
     ViewBag.Title = "List";
@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Website)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Content)
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th></th>
     </tr>
@@ -38,10 +38,10 @@
             @Html.DisplayFor(modelItem => item.Website)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Content)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { contactId= item.Id })
+            @Html.ActionLink("Edit", "Edit", new { contactId=item.Id }) 
         </td>
     </tr>
 }

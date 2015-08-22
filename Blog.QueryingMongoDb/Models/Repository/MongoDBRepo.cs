@@ -20,28 +20,13 @@ namespace Blog.QueryingMongoDb.Models.Repository
         public MongoClient Client;
 
         public IMongoDatabase Db;
-
-        public IMongoCollection<ContactUsModel> ContactUsCollection;
- 
         
-        
-        public  MongoDbRepo(string url, string database, string collection)
+        public  MongoDbRepo(string url, string database)
         {
-
-            //BsonClassMap.RegisterClassMap<ContactUsModel>();
-
             this.Client= new MongoClient(url);
             this.Db = this.Client.GetDatabase(database);
-            this.ContactUsCollection = this.Db.GetCollection<ContactUsModel>(collection);
         }
 
-
-
-        public async Task<List<ContactUsModel>> SearchFor(Expression<Func<ContactUsModel, bool>> predicate)
-        {
-            return await this.ContactUsCollection.Find(Builders<ContactUsModel>.Filter.Where(predicate)).ToListAsync();
-        }
-      
     
     }
 

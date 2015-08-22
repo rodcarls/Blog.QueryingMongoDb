@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{52CB0AB5-B1DA-46C0-AA59-694CF536843E}</ProjectGuid>
+    <ProjectGuid>{E1F28AF8-4F21-412A-A315-0DB444490DC0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Blog.QueryingMongoDb.Tests</RootNamespace>
@@ -119,7 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.QueryingMongoDb\Blog.QueryingMongoDb.csproj">
-      <Project>{B133CFCE-2FB4-46AB-A3A8-C2692C724B07}</Project>
+      <Project>{BA4D4490-52E0-41DB-B199-40AC5998D637}</Project>
       <Name>Blog.QueryingMongoDb</Name>
     </ProjectReference>
   </ItemGroup>
