@@ -20,14 +20,14 @@ namespace Blog.QueryingMongoDb.Models.Repository
         public MongoClient Client;
 
         public IMongoDatabase Db;
-        
-        public  MongoDbRepo(string url, string database)
+
+        public MongoDbRepo(string url, string database)
         {
-            this.Client= new MongoClient(url);
+            this.Client = new MongoClient(url);
             this.Db = this.Client.GetDatabase(database);
         }
 
-    
+
     }
 
 }

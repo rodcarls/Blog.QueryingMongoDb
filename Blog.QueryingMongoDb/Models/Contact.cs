@@ -13,7 +13,7 @@ namespace Blog.QueryingMongoDb.Models
         [BsonId]
         public ObjectId Id { get; set; } //MongoDb uses this field as identity.
 
-       // public int Id { get; set; }
+        // public int Id { get; set; }
 
         [Required]
         [Display(Name = "Name")]

@@ -36,3 +36,4 @@ c:\users\rescas\documents\visual studio 2013\Projects\Blog.QueryingMongoDb\Blog.
 c:\users\rescas\documents\visual studio 2013\Projects\Blog.QueryingMongoDb\Blog.QueryingMongoDb\bin\System.Web.WebPages.Razor.xml
 c:\users\rescas\documents\visual studio 2013\Projects\Blog.QueryingMongoDb\Blog.QueryingMongoDb\obj\Debug\Blog.QueryingMongoDb.dll
 c:\users\rescas\documents\visual studio 2013\Projects\Blog.QueryingMongoDb\Blog.QueryingMongoDb\obj\Debug\Blog.QueryingMongoDb.pdb
+C:\Users\rescas\documents\visual studio 2013\Projects\Blog.QueryingMongoDb\Blog.QueryingMongoDb\obj\Debug\Blog.QueryingMongoDb.csprojResolveAssemblyReference.cache

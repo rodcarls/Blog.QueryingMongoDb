@@ -26,7 +26,7 @@ namespace Blog.QueryingMongoDb.Controllers
 
         public ActionResult List()
         {
-            
+
             return View(
                 _contacts.SelectAll());
         }
@@ -39,12 +39,12 @@ namespace Blog.QueryingMongoDb.Controllers
         [HttpPost]
         public ActionResult Edit(string Id, ContactModel contact)
         {
-           this._contacts.UpdateContact(Id,contact);
+            this._contacts.UpdateContact(Id, contact);
 
-           return RedirectToAction("List",
-                _contacts.SelectAll());
+            return RedirectToAction("List",
+                 _contacts.SelectAll());
         }
 
-        
+
     }
 }

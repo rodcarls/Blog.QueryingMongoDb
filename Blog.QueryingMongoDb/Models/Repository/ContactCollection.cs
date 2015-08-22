@@ -15,7 +15,7 @@ namespace Blog.QueryingMongoDb.Models.Repository
         private string _collectionName = "ContactCollection";
 
         public IMongoCollection<ContactModel> Collection;
- 
+
 
         public ContactCollection()
         {
@@ -31,7 +31,7 @@ namespace Blog.QueryingMongoDb.Models.Repository
         public List<ContactModel> SelectAll()
         {
             var query = this.Collection.Find(new BsonDocument()).ToListAsync();
-            return  query.Result;
+            return query.Result;
         }
 
         public ContactModel Get(string id)
