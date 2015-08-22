@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using Blog.QueryingMongoDb.Models;
 using Blog.QueryingMongoDb.Models.Repository;
 
@@ -20,7 +21,7 @@ namespace Blog.QueryingMongoDb.Controllers
         public ActionResult Create(ContactModel contact)
         {
             this._contacts.InsertContact(contact);
-            return View("List", _contacts.SelectAll());
+            return RedirectToAction("List", _contacts.SelectAll());
         }
 
         public ActionResult List()
@@ -39,8 +40,8 @@ namespace Blog.QueryingMongoDb.Controllers
         public ActionResult Edit(string Id, ContactModel contact)
         {
            this._contacts.UpdateContact(Id,contact);
-            
-            return View("List",
+
+           return RedirectToAction("List",
                 _contacts.SelectAll());
         }
 
