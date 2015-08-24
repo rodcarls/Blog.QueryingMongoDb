@@ -16,7 +16,7 @@ namespace Blog.QueryingMongoDb
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "ContactUs", action = "List", Id = UrlParameter.Optional }
+                defaults: new { controller = "Contact", action = "List", Id = UrlParameter.Optional }
             );
         }
     }

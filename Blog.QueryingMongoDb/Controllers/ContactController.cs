@@ -5,9 +5,9 @@ using Blog.QueryingMongoDb.Models.Repository;
 
 namespace Blog.QueryingMongoDb.Controllers
 {
-    public class ContactUsController : Controller
+    public class ContactController : Controller
     {
-
+        //Private instance of contact collection
         private ContactCollection _contacts = new ContactCollection();
         //
         // GET: /ContactUs/
